@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NewsAPI</name>
+    </assembly>
+    <members>
+        <member name="T:NewsAPI.NewsApiClient">
+            <summary>
+            Use this to get results from NewsAPI.org.
+            </summary>
+        </member>
+        <member name="M:NewsAPI.NewsApiClient.#ctor(System.String)">
+            <summary>
+            Use this to get results from NewsAPI.org.
+            </summary>
+            <param name="apiKey">Your News API key. You can create one for free at https://newsapi.org.</param>
+        </member>
+        <member name="M:NewsAPI.NewsApiClient.GetTopHeadlinesAsync(NewsAPI.Models.TopHeadlinesRequest)">
+            <summary>
+            Query the /v2/top-headlines endpoint for live top news headlines.
+            </summary>
+            <param name="request">The params and filters for the request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsAPI.NewsApiClient.GetTopHeadlines(NewsAPI.Models.TopHeadlinesRequest)">
+            <summary>
+            Query the /v2/top-headlines endpoint for live top news headlines.
+            </summary>
+            <param name="request">The params and filters for the request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsAPI.NewsApiClient.GetEverythingAsync(NewsAPI.Models.EverythingRequest)">
+            <summary>
+            Query the /v2/everything endpoint for recent articles all over the web.
+            </summary>
+            <param name="request">The params and filters for the request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsAPI.NewsApiClient.GetEverything(NewsAPI.Models.EverythingRequest)">
+            <summary>
+            Query the /v2/everything endpoint for recent articles all over the web.
+            </summary>
+            <param name="request">The params and filters for the request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:NewsAPI.Models.TopHeadlinesRequest">
+            <summary>
+            Params for making a request to the /top-headlines endpoint.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.TopHeadlinesRequest.Q">
+            <summary>
+            The keyword or phrase to search for. Boolean operators are supported.
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Models.TopHeadlinesRequest.Sources">
+            <summary>
+            If you want to restrict the results to specific sources, add their Ids here. You can find source Ids with the /sources endpoint or on newsapi.org.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.TopHeadlinesRequest.Category">
+            <summary>
+            If you want to restrict the headlines to a specific news category, add these here.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.TopHeadlinesRequest.Language">
+            <summary>
+            The language to restrict articles to.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.TopHeadlinesRequest.Country">
+            <summary>
+            The country of the source to restrict articles to.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.TopHeadlinesRequest.Page">
+            <summary>
+            Each request returns a fixed amount of results. Page through them by increasing this.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.TopHeadlinesRequest.PageSize">
+            <summary>
+            Set the max number of results to retrieve per request. The max is 100.
+            </summary>
+        </member>
+        <member name="T:NewsAPI.Models.EverythingRequest">
+            <summary>
+            Params for making a request to the /everything endpoint.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.EverythingRequest.Q">
+            <summary>
+            The keyword or phrase to search for. Boolean operators are supported.
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Models.EverythingRequest.Sources">
+            <summary>
+            If you want to restrict the search to specific sources, add their Ids here. You can find source Ids with the /sources endpoint or on newsapi.org.
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Models.EverythingRequest.Domains">
+            <summary>
+            If you want to restrict the search to specific web domains, add these here. Example: nytimes.com.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.EverythingRequest.From">
+            <summary>
+            The earliest date to retrieve articles from. Note that how far back you can go is constrained by your plan type. See newsapi.org/pricing for plan details.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.EverythingRequest.To">
+            <summary>
+            The latest date to retrieve articles from.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.EverythingRequest.Language">
+            <summary>
+            The language to restrict articles to.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.EverythingRequest.SortBy">
+            <summary>
+            How should the results be sorted? Relevancy = articles relevant to the Q param come first. PublishedAt = most recent articles come first. Publisher = popular publishers come first.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.EverythingRequest.Page">
+            <summary>
+            Each request returns a fixed amount of results. Page through them by increasing this.
+            </summary>
+        </member>
+        <member name="P:NewsAPI.Models.EverythingRequest.PageSize">
+            <summary>
+            Set the max number of results to retrieve per request. The max is 100.
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.AR">
+            <summary>
+            Argentina
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.AT">
+            <summary>
+            Austria
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.AU">
+            <summary>
+            Australia
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.BE">
+            <summary>
+            Belgium
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.CA">
+            <summary>
+            Canada
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.CN">
+            <summary>
+            China
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.CZ">
+            <summary>
+            Czech Republic
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.DE">
+            <summary>
+            Germany
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.EG">
+            <summary>
+            Egypt
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.FR">
+            <summary>
+            France
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.GB">
+            <summary>
+            United Kingdom
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.GR">
+            <summary>
+            Greece
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.HK">
+            <summary>
+            Hong Kong
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.HU">
+            <summary>
+            Hungary
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.IE">
+            <summary>
+            Ireland
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.IT">
+            <summary>
+            Italy
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.JP">
+            <summary>
+            Japan
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.KR">
+            <summary>
+            South Korea
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.MX">
+            <summary>
+            Mexico
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.NL">
+            <summary>
+            Netherlands
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.NO">
+            <summary>
+            Norway
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.NZ">
+            <summary>
+            New Zealand
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.PT">
+            <summary>
+            Portugal
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.RU">
+            <summary>
+            Russia
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Countries.US">
+            <summary>
+            United States
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.AF">
+            <summary>
+            Afrikaans (South Africa)
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.DE">
+            <summary>
+            German
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.EN">
+            <summary>
+            English
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.ES">
+            <summary>
+            Spanish
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.IT">
+            <summary>
+            Italian
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.JP">
+            <summary>
+            Japanese
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.NL">
+            <summary>
+            Dutch
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.PT">
+            <summary>
+            Portuguese
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Languages.ZH">
+            <summary>
+            Chinese
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.SortBys.Popularity">
+            <summary>
+            Sort by publisher popularity
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.SortBys.PublishedAt">
+            <summary>
+            Sort by article publish date (newest first)
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.SortBys.Relevancy">
+            <summary>
+            Sort by relevancy to the Q param
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Statuses.Ok">
+            <summary>
+            Request was successful
+            </summary>
+        </member>
+        <member name="F:NewsAPI.Constants.Statuses.Error">
+            <summary>
+            Request failed
+            </summary>
+        </member>
+    </members>
+</doc>
